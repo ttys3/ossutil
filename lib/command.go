@@ -611,7 +611,7 @@ func (cmd *Command) filterError(err error, option *batchOptionType) bool {
 	switch err.(type) {
 	case oss.ServiceError:
 		code := err.(oss.ServiceError).Code
-		if code == "NoSuchBucket" || code == "InvalidAccessKeyId" || code == "SignatureDoesNotMatch" || code == "AccessDenied" || code == "RequestTimeTooSkewed" || code == "InvalidBucketName" {
+		if code == "NoSuchBucket" || code == "InvalidAccessKeyId" || code == "SignatureDoesNotMatch" || code == "RequestTimeTooSkewed" || code == "InvalidBucketName" {
 			option.ctnu = false
 			return false
 		}
